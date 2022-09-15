@@ -3,7 +3,7 @@ FROM --platform=linux/amd64 python:3.9
 
 WORKDIR /code
 
-EXPOSE 8501
+EXPOSE 80
 
 ADD app.py .
 
