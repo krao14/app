@@ -1,11 +1,13 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: nginx
-spec:
+apiVersion: v1	
+kind: Service	
+metadata:	
+  name: heart-disease-flask-app
+  labels:
+    run: heart-disease-flask-app
+spec:	
   ports:
   - protocol: TCP
-    port: 80
+    port: 80	
     targetPort: 80
-  selector:
-    app: nginx
+  selector:	
+    app: heart-disease-flask-app
