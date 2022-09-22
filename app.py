@@ -18,7 +18,7 @@ def predict():
     diabetes=int(request.form['diabetes'])
     prediction=model.predict([[1, age, currentSmoker, cigsPerDay, BPMeds, prevalentStroke, 0, diabetes, 200, 1, 1, 0, 0, 0]])
     if str(prediction[0]) == '0':
-        prediction_text = f'Safe:No heart disease predicted'
+        prediction_text = f'SAFE:No heart disease predicted'
     else:
         prediction_text=f'Alert:Heart disease predicted'
     return render_template('index.html', prediction_text=prediction_text)
