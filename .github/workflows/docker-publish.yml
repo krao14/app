@@ -7,9 +7,12 @@ on:
 name: Node Project `my-app` CI on ECR
 
 jobs:
-  deploy:
-    name: Deploy
+  build:
+  
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
     - name: Checkout
@@ -18,7 +21,7 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        role-to-assume: ecrPush
+        role-to-assume: arn:aws:iam::270723717512:role/ecrPush
         aws-region: us-west-2
 
     - name: Login to Amazon ECR
