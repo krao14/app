@@ -20,7 +20,7 @@ def predict():
     if str(prediction[0]) == '0':
         prediction_text = f'SAFE:No heart disease predicted'
     else:
-        prediction_text=f'ALERT:Heart disease predicted'
+        prediction_text=f'Alert:Heart disease predicted'
     return render_template('index.html', prediction_text=prediction_text)
 
 if __name__ == "__main__":
